@@ -1,0 +1,293 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Testing
+
+    // build:css styles/styles.css
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    // endbuild
+
+  body
+
+    article
+
+      section(data-bespoke-state="white-background").full-background.meetups-logo
+
+      section.white-background
+        h1 Testing
+        h3 Patricio Mac Adden - 
+          a(href='http://twitter.com/maxawen') @maxawen
+
+      section.white-background
+        h1 Disclaimer
+
+      section.white-background
+        h1 ¿Qué es?
+        h3.bullet
+        ul
+          li Conjunto de técnicas y metodologías para proporcionar información sobre la calidad del software
+          li Define cómo funciona el software
+
+      section.white-background
+        h1 ¿Para que sirve?
+
+      section.white-background
+        h2 Seguridad
+
+      section(data-bespoke-state="white-background").full-background.error
+      section(data-bespoke-state="white-background").full-background.awkward
+      section(data-bespoke-state="white-background").full-background.shame
+      section(data-bespoke-state="white-background").full-background.angry
+      section(data-bespoke-state="white-background").full-background.world
+
+      section.white-background
+        h2 Documentación
+        h3 Un test es documentación acerca de un método y/o pieza de software debe funcionar
+
+      section(data-bespoke-state="white-background").white-background
+        img(src='/images/doc1.png')
+
+      section(data-bespoke-state="white-background").white-background
+        img(src='/images/doc2.png')
+
+      section.white-background
+        h2 Desacoplamiento
+
+      section.white-background
+        h2 Código limpio
+
+      section.white-background
+        h1 Distintas filosofías de Testing
+
+      section.white-background
+        h2 No testear
+        h3.bullet
+        ul
+          li Faith Driven Development
+
+      section(data-bespoke-state="white-background").full-background.facepalm
+
+      section.white-background
+        h2 Ejemplo
+        pre
+          code.language-javascript.
+            var person = {
+              firstName: 'Patricio',
+              lastName: 'Mac Adden',
+              fullName: function() {
+                return this.firstName + ' ' + this.lastName;
+              }
+            }
+
+      section.white-background
+        h2 ... y que Dios nos ayude!
+
+      section.white-background
+        h2 Smoke testing
+        h3.bullet Escribir el código y luego probar en el navegador
+        ul
+          li VDDDD (var_dump & die driven development)
+          li LPMQTRMPDD
+
+      section(data-bespoke-state="white-background").full-background.devastated
+
+      section.white-background
+        h2 Tests de verificación
+        h3 Escribir el código y luego los tests
+
+      section(data-bespoke-state="white-background").full-background.thumbsup
+
+      section.white-background
+        h2 Ejemplo usando mocha
+
+      section.white-background
+        h2 Primero escribimos el código
+        pre
+          code.language-javascript.
+            var person = {
+              firstName: 'Patricio',
+              lastName: 'Mac Adden',
+              fullName: function() {
+                return this.firstName + ' ' + this.lastName;
+              }
+            }
+
+            module.exports.person = person;
+
+      section.white-background
+        h2 Y después los tests
+        pre
+          code.language-javascript.
+            var assert = require('assert');
+            var person = require('../person.js').person;
+
+            describe('person', function() {
+              // también hay que testear que firstName y lastName!
+
+              describe('fullName', function() {
+                it("returns the person's full name", function() {
+                  assert.equal('Patricio Mac Adden', person.fullName());
+                });
+              });
+            });
+
+      section(data-bespoke-state="white-background").white-background
+        img(src='/images/test.png')
+
+      section.white-background
+        h2 Test Driven Development
+        h3 Primero escribimos los tests, luego el código
+
+      section(data-bespoke-state="white-background").full-background.exploding-head
+
+      section.white-background
+        h2 TDD no es fácil
+        h3.bullet
+        ul
+          li Es un proceso anti intuitivo: ¿Cómo que los tests antes que el código?
+          li Es una técnica: requiere práctica
+
+      section(data-bespoke-state="white-background").white-background
+        img(src='/images/mrbean-exercise.gif')
+
+      section.white-background
+        h2 Procedimiento básico para hacer TDD
+
+      section(data-bespoke-state="red-background").red-background
+        h1 RED
+        h3 Hacé un test que falle
+
+      section(data-bespoke-state="green-background").green-background
+        h1 GREEN
+        h3 Hacé que el test pase
+
+      section(data-bespoke-state="blue-background").blue-background
+        h1 REFACTOR
+        h3 Código y tests
+
+      section.white-background
+        h2 Ejemplo: tdd usando mocha
+
+      section(data-bespoke-state="red-background").red-background
+        pre
+          code.language-javascript.
+            var assert = require('assert');
+
+            describe('person', function() {
+              describe('fullName', function() {
+                it("returns the person's full name", function() {
+                  assert.equal('Patricio Mac Adden', person.fullName());
+                });
+              });
+            });
+
+      section(data-bespoke-state="red-background").red-background
+        img(src='/images/tdd_1.png')
+
+      section(data-bespoke-state="green-background").green-background
+        pre
+          code.language-javascript.
+            var assert = require('assert');
+
+            var person = {
+              fullName: function() { return 'Patricio Mac Adden'; }
+            }
+
+            describe('person', function() {
+              describe('fullName', function() {
+                it("returns the person's full name", function() {
+                  assert.equal('Patricio Mac Adden', person.fullName());
+                });
+              });
+            });
+
+      section(data-bespoke-state="green-background").green-background
+        img(src='/images/tdd_2.png')
+
+      section(data-bespoke-state="blue-background").blue-background
+        pre
+          code.language-javascript.
+            var assert = require('assert');
+            var person = require('person').person;
+
+            describe('person', function() {
+              describe('fullName', function() {
+                it("returns the person's full name", function() {
+                  assert.equal('Patricio Mac Adden', person.fullName());
+                });
+              });
+            });
+
+      section(data-bespoke-state="blue-background").blue-background
+        pre
+          code.language-javascript.
+            var person = {
+              fullName: function() { return 'Patricio Mac Adden'; }
+            }
+
+            module.exports.person = person;
+
+      section(data-bespoke-state="blue-background").blue-background
+        img(src='/images/tdd_2.png')
+
+      section(data-bespoke-state="blue-background").blue-background
+        pre
+          code.language-javascript.
+            var assert = require('assert');
+            var person = require('person').person;
+            describe('person', function() {
+              it('has a first name', function() {
+                assert.equal('Patricio', person.firstName);
+              });
+              it('has a last name', function() {
+                assert.equal('Mac Adden', person.lastName);
+              });
+              describe('fullName', function() {
+                it("returns the person's full name", function() {
+                  assert.equal('Patricio Mac Adden', person.fullName());
+                });
+              });
+            });
+
+      section(data-bespoke-state="blue-background").blue-background
+        pre
+          code.language-javascript.
+            var person = {
+              firstName: 'Patricio',
+              lastName: 'Mac Adden',
+              fullName: function() {
+                return this.firstName + ' ' + this.lastName;
+              }
+            }
+
+            module.exports.person = person;
+
+      section(data-bespoke-state="blue-background").blue-background
+        img(src='/images/tdd_3.png')
+
+      section.white-background
+        h1 Conclusiones
+
+      section.white-background
+        h1 ¿Preguntas?
+
+      section.white-background
+        h1 ¡Gracias!
+
+    // build:js scripts/scripts.js
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
+    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
+    // endbuild
