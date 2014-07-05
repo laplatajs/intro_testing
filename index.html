@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Testing</title>
+    <link rel="stylesheet" href="styles/styles.css"/>
+  </head>
+  <body>
+    <article>
+      <section data-bespoke-state="white-background" class="full-background meetups-logo"></section>
+      <section class="white-background">
+        <h1>Testing</h1>
+        <h3>Patricio Mac Adden - <a href="http://twitter.com/maxawen">@maxawen</a></h3>
+      </section>
+      <section class="white-background">
+        <h1>Disclaimer</h1>
+      </section>
+      <section class="white-background">
+        <h1>¿Qué es?</h1>
+        <h3 class="bullet"></h3>
+        <ul>
+          <li>Conjunto de técnicas y metodologías para proporcionar información sobre la calidad del software</li>
+          <li>Define cómo funciona el software</li>
+        </ul>
+      </section>
+      <section class="white-background">
+        <h1>¿Para que sirve?</h1>
+      </section>
+      <section class="white-background">
+        <h2>Seguridad</h2>
+      </section>
+      <section data-bespoke-state="white-background" class="full-background error"></section>
+      <section data-bespoke-state="white-background" class="full-background awkward"></section>
+      <section data-bespoke-state="white-background" class="full-background shame"></section>
+      <section data-bespoke-state="white-background" class="full-background angry"></section>
+      <section data-bespoke-state="white-background" class="full-background world"></section>
+      <section class="white-background">
+        <h2>Documentación</h2>
+        <h3>Un test es documentación acerca de un método y/o pieza de software debe funcionar</h3>
+      </section>
+      <section data-bespoke-state="white-background" class="white-background"><img src="/images/doc1.png"></section>
+      <section data-bespoke-state="white-background" class="white-background"><img src="/images/doc2.png"></section>
+      <section class="white-background">
+        <h2>Desacoplamiento</h2>
+      </section>
+      <section class="white-background">
+        <h2>Código limpio</h2>
+      </section>
+      <section class="white-background">
+        <h1>Distintas filosofías de Testing</h1>
+      </section>
+      <section class="white-background">
+        <h2>No testear</h2>
+        <h3 class="bullet"></h3>
+        <ul>
+          <li>Faith Driven Development</li>
+        </ul>
+      </section>
+      <section data-bespoke-state="white-background" class="full-background facepalm"></section>
+      <section class="white-background">
+        <h2>Ejemplo</h2>
+        <pre><code class="language-javascript">var person = {
+  firstName: 'Patricio',
+  lastName: 'Mac Adden',
+  fullName: function() {
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+</code></pre>
+      </section>
+      <section class="white-background">
+        <h2>... y que Dios nos ayude!</h2>
+      </section>
+      <section class="white-background">
+        <h2>Smoke testing</h2>
+        <h3 class="bullet">Escribir el código y luego probar en el navegador</h3>
+        <ul>
+          <li>VDDDD (var_dump & die driven development)</li>
+          <li>LPMQTRMPDD</li>
+        </ul>
+      </section>
+      <section data-bespoke-state="white-background" class="full-background devastated"></section>
+      <section class="white-background">
+        <h2>Tests de verificación</h2>
+        <h3>Escribir el código y luego los tests</h3>
+      </section>
+      <section data-bespoke-state="white-background" class="full-background thumbsup"></section>
+      <section class="white-background">
+        <h2>Ejemplo usando mocha</h2>
+      </section>
+      <section class="white-background">
+        <h2>Primero escribimos el código</h2>
+        <pre><code class="language-javascript">var person = {
+  firstName: 'Patricio',
+  lastName: 'Mac Adden',
+  fullName: function() {
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+
+module.exports.person = person;
+</code></pre>
+      </section>
+      <section class="white-background">
+        <h2>Y después los tests</h2>
+        <pre><code class="language-javascript">var assert = require('assert');
+var person = require('../person.js').person;
+
+describe('person', function() {
+  // también hay que testear que firstName y lastName!
+  
+  describe('fullName', function() {
+    it("returns the person's full name", function() {
+      assert.equal('Patricio Mac Adden', person.fullName());
+    });
+  });
+});
+</code></pre>
+      </section>
+      <section data-bespoke-state="white-background" class="white-background"><img src="/images/test.png"></section>
+      <section class="white-background">
+        <h2>Test Driven Development</h2>
+        <h3>Primero escribimos los tests, luego el código</h3>
+      </section>
+      <section data-bespoke-state="white-background" class="full-background exploding-head"></section>
+      <section class="white-background">
+        <h2>TDD no es fácil</h2>
+        <h3 class="bullet"></h3>
+        <ul>
+          <li>Es un proceso anti intuitivo: ¿Cómo que los tests antes que el código?</li>
+          <li>Es una técnica: requiere práctica</li>
+        </ul>
+      </section>
+      <section data-bespoke-state="white-background" class="white-background"><img src="/images/mrbean-exercise.gif"></section>
+      <section class="white-background">
+        <h2>Procedimiento básico para hacer TDD</h2>
+      </section>
+      <section data-bespoke-state="red-background" class="red-background">
+        <h1>RED</h1>
+        <h3>Hacé un test que falle</h3>
+      </section>
+      <section data-bespoke-state="green-background" class="green-background">
+        <h1>GREEN</h1>
+        <h3>Hacé que el test pase</h3>
+      </section>
+      <section data-bespoke-state="blue-background" class="blue-background">
+        <h1>REFACTOR</h1>
+        <h3>Código y tests</h3>
+      </section>
+      <section class="white-background">
+        <h2>Ejemplo: tdd usando mocha</h2>
+      </section>
+      <section data-bespoke-state="red-background" class="red-background">
+        <pre><code class="language-javascript">var assert = require('assert');
+
+describe('person', function() {
+  describe('fullName', function() {
+    it("returns the person's full name", function() {
+      assert.equal('Patricio Mac Adden', person.fullName());
+    });
+  });
+});
+</code></pre>
+      </section>
+      <section data-bespoke-state="red-background" class="red-background"><img src="/images/tdd_1.png"></section>
+      <section data-bespoke-state="green-background" class="green-background">
+        <pre><code class="language-javascript">var assert = require('assert');
+
+var person = {
+  fullName: function() { return 'Patricio Mac Adden'; }
+}
+
+describe('person', function() {
+  describe('fullName', function() {
+    it("returns the person's full name", function() {
+      assert.equal('Patricio Mac Adden', person.fullName());
+    });
+  });
+});
+</code></pre>
+      </section>
+      <section data-bespoke-state="green-background" class="green-background"><img src="/images/tdd_2.png"></section>
+      <section data-bespoke-state="blue-background" class="blue-background">
+        <pre><code class="language-javascript">var assert = require('assert');
+var person = require('person').person;
+
+describe('person', function() {
+  describe('fullName', function() {
+    it("returns the person's full name", function() {
+      assert.equal('Patricio Mac Adden', person.fullName());
+    });
+  });
+});
+</code></pre>
+      </section>
+      <section data-bespoke-state="blue-background" class="blue-background">
+        <pre><code class="language-javascript">var person = {
+  fullName: function() { return 'Patricio Mac Adden'; }
+}
+
+module.exports.person = person;
+</code></pre>
+      </section>
+      <section data-bespoke-state="blue-background" class="blue-background"><img src="/images/tdd_2.png"></section>
+      <section data-bespoke-state="blue-background" class="blue-background">
+        <pre><code class="language-javascript">var assert = require('assert');
+var person = require('person').person;
+describe('person', function() {
+  it('has a first name', function() {
+    assert.equal('Patricio', person.firstName);
+  });
+  it('has a last name', function() {
+    assert.equal('Mac Adden', person.lastName);
+  });
+  describe('fullName', function() {
+    it("returns the person's full name", function() {
+      assert.equal('Patricio Mac Adden', person.fullName());
+    });
+  });
+});
+</code></pre>
+      </section>
+      <section data-bespoke-state="blue-background" class="blue-background">
+        <pre><code class="language-javascript">var person = {
+  firstName: 'Patricio',
+  lastName: 'Mac Adden',
+  fullName: function() {
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+
+module.exports.person = person;
+</code></pre>
+      </section>
+      <section data-bespoke-state="blue-background" class="blue-background"><img src="/images/tdd_3.png"></section>
+      <section class="white-background">
+        <h1>Conclusiones</h1>
+      </section>
+      <section class="white-background">
+        <h1>¿Preguntas?</h1>
+      </section>
+      <section class="white-background">
+        <h1>¡Gracias!</h1>
+      </section>
+    </article>
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>
